@@ -185,6 +185,7 @@ For TensorFlow version 1.x
    sudo docker run --gpus all -p 8888:8888 -it -v /path/to/host/folder:/path/to/container/folder nvcr.io/nvidia/tensorflow:20.10-tf2-py3
 
 ## Run jupyter
+---------------
 
 # On Docker Container: 
 
@@ -199,12 +200,15 @@ For TensorFlow version 1.x
    localhost:8888
    
 # Make a new floder in the Docker Container
+---------------------------------------------
 
 .. code:: bash 
 
    mkdir /folder_name
+   
 
 ## Stop a container
+-------------------
 
 .. code:: bash 
 
@@ -234,7 +238,8 @@ Syntax: ``sudo docker cp /home/(name)/(folder_name)/(file_name)  (container_id):
 
    docker cp mycontainer:/foo.txt foo.txt
 
-****For emphasis, mycontainer is a container ID, not an image ID.**
+.. warning::
+   For emphasis, mycontainer is a container ID, not an image ID.
 
 # Multiple files contained by the folder src can be copied into the target folder using:
 

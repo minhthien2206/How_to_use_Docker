@@ -56,7 +56,11 @@ Prerequisites
    curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | \
      sudo tee /etc/apt/sources.list.d/nvidia-docker.list
    sudo apt-get update
-   
+  
+.. image:: 1.1.png
+  :width: 400
+  :align: center
+  :alt: Image 1.1
 
  
 

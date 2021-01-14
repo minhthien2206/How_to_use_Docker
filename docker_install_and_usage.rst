@@ -62,13 +62,32 @@ Prerequisites
   :align: center
   :alt: Image 1.1
 
- 
+- 1.2. Install nvidia-docker 2.0. 
 
+.. code:: bash
+
+   sudo apt-get install nvidia-docker2
+   sudo pkill -SIGHUP dockerd
+
+If you get the successfully installation. Verify it by run the nvidia-docker 2.0:
+
+.. code:: bash
+   
+   sudo docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
+   
+.. image:: 1.2_2.png
+  :width: 400
+  :align: center
+  :alt: Image 1.2_2  
+The nvidia image can be pulled. And we can check the GPU information by nvidia-smi.
+
+If you get the "Abort" messenger as in image bellow (Please follow step 1.3 to 1.5).
 
 
 References:
 -----------
 - https://sh-tsang.medium.com/docker-tutorial-5-nvidia-docker-2-0-installation-in-ubuntu-18-04-cb80f17cac65
+- https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)
 - `Create Docs with RST <https://sublime-and-sphinx-guide.readthedocs.io/en/latest/index.html>`__
 
 

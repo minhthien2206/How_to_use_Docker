@@ -154,19 +154,95 @@ For TensorFlow version 1.x
    
 2.2. Basic commands.
 
+`Docker Docs <https://docs.docker.com/engine/reference/commandline/>`__
+
 .. code:: bash
 
    # 1. Check docker version: 
    docker -v
-   # 2. 
+   # 2. List docker images
+   docker image ls
+   # 3. Remove a docker image
+   docker image rm "image_name"
+   # 4. Search docker image
+   docker search "image_name"
+   
+2.3. Run Docker Images.
+# Tensorflow:
+
+.. code:: bash 
+
+   sudo docker run --gpus all -p 8888:8888 -it -v /path/to/host/folder:/path/to/container/folder nvcr.io/nvidia/tensorflow:20.10-tf2-py3
+
+## Run jupyter
+
+# On Docker Container: 
+
+.. code:: bash 
+
+   jupyter lab --ip 0.0.0.0 --no-browser --allow-root
+
+# On host: 
+
+.. code:: bash 
+
+   localhost:8888
+   
+# Make a new floder in the Docker Container
+
+.. code:: bash 
+
+   mkdir /folder_name
+
+## Stop a container
+
+.. code:: bash 
+
+   docker exec -ti CONTAINER_ID bash   
+
+# Copy a file from host to docker container
+-------------------------------------------
+Syntax: ``sudo docker cp /home/(name)/(folder_name)/(file_name)  (container_id):/(to_the_place_you_want_the_file_to_be)``
+
+
+.. code:: bash
+
+   sudo docker cp /home/truongdong/Desktop/test_gpy.py  dc51c65292b7:/truongdong
    
 
+# One specific file can be copied TO the container like:
+
+.. code:: bash
+
+   docker cp foo.txt mycontainer:/foo.txt
+   
+
+# One specific file can be copied FROM the container like:
+
+.. code:: bash
 
 
+   docker cp mycontainer:/foo.txt foo.txt
+
+****For emphasis, mycontainer is a container ID, not an image ID.**
+
+# Multiple files contained by the folder src can be copied into the target folder using:
+
+.. code:: bash
 
 
-  
-  
+   docker cp src/. mycontainer:/target
+   docker cp mycontainer:/src/. target
+
+# Work with Vim
+---------------
+.. code:: bash 
+
+   Esc – switch to command mode
+   :w – write out changes that were made
+   :q – exit Vim
+   :q! – exit Vim and discard any changes
+
 References:
 -----------
 - https://sh-tsang.medium.com/docker-tutorial-5-nvidia-docker-2-0-installation-in-ubuntu-18-04-cb80f17cac65

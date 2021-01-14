@@ -247,7 +247,7 @@ Syntax: ``sudo docker cp /home/(name)/(folder_name)/(file_name)  (container_id):
    docker cp mycontainer:/foo.txt foo.txt
 
 .. warning::
-   For emphasis, mycontainer is a container ID, not an image ID.
+    For emphasis, mycontainer is a container ID, not an image ID.
 
 # Multiple files contained by the folder src can be copied into the target folder using:
 

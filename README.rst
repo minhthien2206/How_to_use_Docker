@@ -1,17 +1,10 @@
 .. raw:: html
    
     <h1 align="center"> Docker: Install and Usage on UBUNTU 18.04 </h1>
-    // <a href='https://how-to-use-docker.readthedocs.io/en/latest/?badge=latest'>
-    // <img src='https://readthedocs.org/projects/how-to-use-docker/badge/?version=latest' alt='Documentation Status' />
-    //  </a> 
 
 **Author: Truong Dong Do** 
 
 Updated: January 14, 2021
-
-// Documentation
-// -------------
-// Latest **documentation** is avaliable on `Read the Docs <https://how-to-use-docker.readthedocs.io/en/latest/>`__
 
 Introduction
 **********

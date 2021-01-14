@@ -83,10 +83,10 @@ The nvidia image can be pulled. And we can check the GPU information by nvidia-s
 
 If you get the error messenger as in image bellow (Please follow step 1.3 to 1.5).
 
-.. image:: 1.2.png
+.. image:: 1.2_1.png
   :width: 400
   :align: center
-  :alt: Image 1.2 
+  :alt: Image 1.2_1 
   
 - 1.3. Check the versions nvidia-docker 2.0 on github.
 

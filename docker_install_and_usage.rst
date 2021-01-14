@@ -6,15 +6,15 @@
 **Author: Truong Dong Do** | Updated: January 14, 2021
 
 Introduction
-------------
+**********
 `Docker <https://www.docker.com/>`__ is an application that simplifies the process of managing application processes in containers. Containers let you run your applications in resource-isolated processes. They’re similar to virtual machines, but containers are more portable, more resource-friendly, and more dependent on the host operating system.
 
 Prerequisites
-------------
+**********
 - Ubuntu 18.04
 
 0. Install GPU Driver:
---------------------
+********************
 - `Check the suitable GPU Driver <https://www.nvidia.com/download/index.aspx?lang=en-us>`_ | `GPU support <https://www.tensorflow.org/install/gpu#software_requirements>`_
 
 .. code:: bash
@@ -37,8 +37,9 @@ Prerequisites
     nvidia-smi
 
 1. Docker 2.0 installation Procedures:
-----------------------------------------
+****************************************
 1.0. If there is nvidia-docker 1.0 already, it needs to be removed. (Skip it if you do not have it.)
+===================================================================================================
 
 .. code:: bash
 
@@ -47,6 +48,7 @@ Prerequisites
    sudo apt-get purge nvidia-docker
    
 1.1. Set the repository and update. 
+=================================
  
 .. code:: bash
 
@@ -63,6 +65,7 @@ Prerequisites
   :alt: Image 1.1
 
 1.2. Install nvidia-docker 2.0. 
+=================================
 
 .. code:: bash
 
@@ -89,6 +92,7 @@ If you get the error messenger as in image bellow (Please follow step 1.3 to 1.5
   :alt: Image 1.2_1 
   
 1.3. Check the versions nvidia-docker 2.0 on github.
+=======================================================
 
 .. code:: bash
    
@@ -100,6 +104,7 @@ If you get the error messenger as in image bellow (Please follow step 1.3 to 1.5
   :alt: Image 1.3 
   
 1.4. Choose nvidia-docker version you want to install.
+=======================================================
 Ex: We chose nvidia-docker2=2.0.3+docker18.03.1–1 for installation
 
 .. code:: bash
@@ -121,19 +126,21 @@ Ex: We chose nvidia-docker2=2.0.3+docker18.03.1–1 for installation
   :alt: Image 1.2_3 
   
 1.5. run the nvidia-docker 2.0 again to verify the installation.
+==================================================================
 
 .. code:: bash
    
    sudo docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
    
 2. Docker 2.0 usage:
---------------------
+********************
 
 If you want to find a docker image to pull.
    Search google: docker hub + "name of docker image"
 
 
 2.1. Pull the Docker from nvidia:
+=================================
 
 - `Nvidia Tensorflow Docker <https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/running.html#running>`__
 
@@ -153,6 +160,7 @@ For TensorFlow version 1.x
    sudo docker pull nvcr.io/nvidia/tensorflow:20.12-tf1-py3
    
 2.2. Basic commands.
+======================
 
 `Docker Docs <https://docs.docker.com/engine/reference/commandline/>`__
 
@@ -168,6 +176,8 @@ For TensorFlow version 1.x
    docker search "image_name"
    
 2.3. Run Docker Images.
+======================
+
 # Tensorflow:
 
 .. code:: bash 

@@ -38,7 +38,7 @@ Prerequisites
 
 1. Docker 2.0 installation Procedures:
 ----------------------------------------
-- 1.0. If there is nvidia-docker 1.0 already, it needs to be removed. (Skip it if you do not have it.)
+1.0. If there is nvidia-docker 1.0 already, it needs to be removed. (Skip it if you do not have it.)
 
 .. code:: bash
 
@@ -46,7 +46,7 @@ Prerequisites
    docker ps -q -a -f volume={} | xargs -r docker rm -f
    sudo apt-get purge nvidia-docker
    
-- 1.1. Set the repository and update. 
+1.1. Set the repository and update. 
  
 .. code:: bash
 
@@ -62,7 +62,7 @@ Prerequisites
   :align: center
   :alt: Image 1.1
 
-- 1.2. Install nvidia-docker 2.0. 
+1.2. Install nvidia-docker 2.0. 
 
 .. code:: bash
 
@@ -88,13 +88,81 @@ If you get the error messenger as in image bellow (Please follow step 1.3 to 1.5
   :align: center
   :alt: Image 1.2_1 
   
-- 1.3. Check the versions nvidia-docker 2.0 on github.
+1.3. Check the versions nvidia-docker 2.0 on github.
 
 .. code:: bash
    
    apt-cache madison nvidia-docker2 nvidia-container-runtime
 
+.. image:: 1.3.png
+  :width: 400
+  :align: center
+  :alt: Image 1.3 
+  
+1.4. Choose nvidia-docker version you want to install.
+Ex: We chose nvidia-docker2=2.0.3+docker18.03.1–1 for installation
 
+.. code:: bash
+
+   sudo apt-get install nvidia-docker2=2.0.3+docker18.03.1–1
+   
+.. image:: 1.4.png
+  :width: 400
+  :align: center
+  :alt: Image 1.4 
+
+.. code:: bash
+
+   sudo pkill -SIGHUP dockerd
+   
+.. image:: 1.2_3.png
+  :width: 400
+  :align: center
+  :alt: Image 1.2_3 
+  
+1.5. run the nvidia-docker 2.0 again to verify the installation.
+
+.. code:: bash
+   
+   sudo docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
+   
+2. Docker 2.0 usage:
+--------------------
+If you want to find a docker image to pull.
+   Search google: docker hub + "name of docker image"
+
+
+2.1. Pull the Docker from nvidia:
+- `Nvidia Tensorflow Docker <https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/running.html#running>`__
+
+For TensorFlow version 2.x
+
+
+.. code:: bash
+   
+   sudo docker pull nvcr.io/nvidia/tensorflow:20.12-tf2-py3
+   
+Or
+For TensorFlow version 1.x
+
+
+.. code:: bash
+
+   sudo docker pull nvcr.io/nvidia/tensorflow:20.12-tf1-py3
+   
+2.2. Basic commands.
+- Check docker version: 
+.. code:: bash
+
+   docker -v
+   
+
+
+
+
+
+  
+  
 References:
 -----------
 - https://sh-tsang.medium.com/docker-tutorial-5-nvidia-docker-2-0-installation-in-ubuntu-18-04-cb80f17cac65

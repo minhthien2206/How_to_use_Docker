@@ -128,11 +128,13 @@ Ex: We chose nvidia-docker2=2.0.3+docker18.03.1–1 for installation
    
 2. Docker 2.0 usage:
 --------------------
+
 If you want to find a docker image to pull.
    Search google: docker hub + "name of docker image"
 
 
 2.1. Pull the Docker from nvidia:
+
 - `Nvidia Tensorflow Docker <https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/running.html#running>`__
 
 For TensorFlow version 2.x
@@ -151,10 +153,12 @@ For TensorFlow version 1.x
    sudo docker pull nvcr.io/nvidia/tensorflow:20.12-tf1-py3
    
 2.2. Basic commands.
-- Check docker version: 
+
 .. code:: bash
 
+   # 1. Check docker version: 
    docker -v
+   # 2. 
    
 
 

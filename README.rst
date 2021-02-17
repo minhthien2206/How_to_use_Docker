@@ -291,7 +291,7 @@ Syntax: ``sudo docker cp /home/(name)/(folder_name)/(file_name)  (container_id):
 
 
    sudo docker cp src/. mycontainer:/target
-   sdocker cp mycontainer:/src/. target
+   sudo docker cp mycontainer:/src/. target
 
 # Work with Vim
 ---------------

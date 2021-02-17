@@ -207,11 +207,27 @@ For TensorFlow version 1.x
 
    mkdir /folder_name
    
+Work with Docker Containers:
+===========================
 
-3. Work with Docker Containers:
-*******************************
 When we run a Docker image, it created a container with a specific CONTAINER_ID
 
+.. code:: bash
+   
+   # 1. List the running containers 
+   sudo docker ps
+   # 2. List all containers
+   sudo docker ps -a
+   # 3. Stop a running container
+   sudo docker stop CONTAINER_ID
+   # 4. Kill a running container
+   sudo docker kill CONTAINER_ID
+   ## Remove all stopped containers
+   sudo docker container prune
+   # 5. Start a container again
+   sudo docker start CONTAINER_ID
+   # 6. Access the running container command line
+   sudo docker exec -ti CONTAINER_ID bash
 
 # Copy a file from host to docker container
 -------------------------------------------

@@ -208,12 +208,10 @@ For TensorFlow version 1.x
    mkdir /folder_name
    
 
-## Stop a container
--------------------
+3. Work with Docker Containers:
+*******************************
+When we run a Docker image, it created a container with a specific CONTAINER_ID
 
-.. code:: bash 
-
-   docker exec -ti CONTAINER_ID bash   
 
 # Copy a file from host to docker container
 -------------------------------------------

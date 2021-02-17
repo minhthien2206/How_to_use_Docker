@@ -4,7 +4,7 @@
 
 **Author: Truong Dong Do** 
 
-Updated: January 14, 2021
+Updated: February 17, 2021
 
 Introduction
 **********
@@ -172,7 +172,7 @@ For TensorFlow version 1.x
    # 2. List docker images
    docker image ls
    # 3. Remove a docker image
-   docker image rm "image_name"
+   docker image rm "image_name"/"image_ID"
    # 4. Search docker image
    docker search "image_name"
    

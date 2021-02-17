@@ -168,13 +168,13 @@ For TensorFlow version 1.x
 .. code:: bash
 
    # 1. Check docker version: 
-   docker -v
+   sudo docker -v
    # 2. List docker images
-   docker image ls
+   sudo docker image ls
    # 3. Remove a docker image
-   docker image rm "image_name"/"image_ID"
+   sudo docker image rm "IMAGE_NAME"/"IMAGE_ID"
    # 4. Search docker image
-   docker search "image_name"
+   sudo docker search "IMAGE_NAME"
    
 2.3. Run Docker Images.
 ======================
@@ -222,13 +222,42 @@ When we run a Docker image, it created a container with a specific CONTAINER_ID
    sudo docker stop CONTAINER_ID
    # 4. Kill a running container
    sudo docker kill CONTAINER_ID
-   ## Remove all stopped containers
+   # 5. Remove all stopped containers
    sudo docker container prune
-   # 5. Start a container again
+   # 6. Start a container again
    sudo docker start CONTAINER_ID
-   # 6. Access the running container command line
+   # 7. Access the running container command line
    sudo docker exec -ti CONTAINER_ID bash
+   
+Create a Docker Image from a Docker Container:
+============================================
 
+.. code:: bash
+
+   # 1. Inspect Containers
+   sudo docker ps -a
+   # 2. Create an Image From a Container
+   sudo docker commit CONTAINER_ID
+   # 3. List the images
+   sudo docker image ls
+   # 4. Tag the Docker Image
+   sudo docker tag IMAGE_ID NEW_IMAGE_NAME
+   
+Push a new image to a registry:
+==============================
+If you do not have DockerHub account, Sign up `here <https://hub.docker.com/signup>`_
+
+.. code:: bash
+
+   # 1. Log in DockerHub
+   sudo docker login #Enter the username and password
+   # 2. Retag the image with a version number
+   sudo docker tag yourusername/example-node-app yourdockerhubusername/example-node-app:v1
+   Ex: sudo docker tag truongdong dongdo96/truongdong:v1
+   # 3. Push to your DockerHub
+   sudo docker push ourdockerhubusername/example-node-app:v1
+   Ex: sudo docker push dongdo96/truongdong  
+      
 # Copy a file from host to docker container
 -------------------------------------------
 Syntax: ``sudo docker cp /home/(name)/(folder_name)/(file_name)  (container_id):/(to_the_place_you_want_the_file_to_be)``
@@ -243,7 +272,7 @@ Syntax: ``sudo docker cp /home/(name)/(folder_name)/(file_name)  (container_id):
 
 .. code:: bash
 
-   docker cp foo.txt mycontainer:/foo.txt
+   sudo docker cp foo.txt mycontainer:/foo.txt
    
 
 # One specific file can be copied FROM the container like:
@@ -251,7 +280,7 @@ Syntax: ``sudo docker cp /home/(name)/(folder_name)/(file_name)  (container_id):
 .. code:: bash
 
 
-   docker cp mycontainer:/foo.txt foo.txt
+   sudo docker cp mycontainer:/foo.txt foo.txt
 
 .. warning::
     For emphasis, mycontainer is a container ID, not an image ID.
@@ -261,8 +290,8 @@ Syntax: ``sudo docker cp /home/(name)/(folder_name)/(file_name)  (container_id):
 .. code:: bash
 
 
-   docker cp src/. mycontainer:/target
-   docker cp mycontainer:/src/. target
+   sudo docker cp src/. mycontainer:/target
+   sdocker cp mycontainer:/src/. target
 
 # Work with Vim
 ---------------

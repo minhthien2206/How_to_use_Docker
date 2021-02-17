@@ -307,6 +307,7 @@ References:
 - https://sh-tsang.medium.com/docker-tutorial-5-nvidia-docker-2-0-installation-in-ubuntu-18-04-cb80f17cac65
 - https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)
 - `Create Docs with RST <https://sublime-and-sphinx-guide.readthedocs.io/en/latest/index.html>`__
+- https://stackify.com/docker-build-a-beginners-guide-to-building-docker-images/
 
 
     

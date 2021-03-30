@@ -183,7 +183,7 @@ For TensorFlow version 1.x
 
 .. code:: bash 
 
-   sudo docker run -d -name min --gpus all -p 8888:8888 -it -v /path/to/host/folder:/path/to/container/folder nvcr.io/nvidia/tensorflow:20.10-tf2-py3
+   sudo docker run -d --name min --gpus all -p 8888:8888 -it -v /path/to/host/folder:/path/to/container/folder nvcr.io/nvidia/tensorflow:20.10-tf2-py3
 
 ## Run jupyter
 ---------------

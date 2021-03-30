@@ -183,7 +183,7 @@ For TensorFlow version 1.x
 
 .. code:: bash 
 
-   sudo docker run --gpus all -p 8888:8888 -it -v /path/to/host/folder:/path/to/container/folder nvcr.io/nvidia/tensorflow:20.10-tf2-py3
+   sudo docker run -d -name min --gpus all -p 8888:8888 -it -v /path/to/host/folder:/path/to/container/folder nvcr.io/nvidia/tensorflow:20.10-tf2-py3
 
 ## Run jupyter
 ---------------
@@ -227,8 +227,9 @@ When we run a Docker image, it created a container with a specific CONTAINER_ID
    # 6. Start a container again
    sudo docker start CONTAINER_ID
    # 7. Access the running container command line
-   sudo docker exec -ti CONTAINER_ID bash
-   
+   sudo docker exec -ti <CONTAINER_ID/NAME> bash
+   # 8. Exit the running container command line
+   exit
 Create a Docker Image from a Docker Container:
 ============================================
 
